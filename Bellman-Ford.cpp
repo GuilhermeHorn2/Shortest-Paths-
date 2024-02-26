@@ -60,7 +60,8 @@ void Bellman_Ford(int strt, std::vector<std::vector<int>> &graph, std::vector<in
 
  std::queue<int> adj;
  adj.push(strt);
- int n = graph.size();
+ int n = 2 * graph.size(); // We iterate at most n rounds and the argument is if
+ // algorithm runs more than this we say that there is a negative cycle
  int c = 0;
  // if exists a negative cycle the algortihm will run more than n times
  while (!adj.empty() && c <= n)
